@@ -1,0 +1,33 @@
+input[name="radioinputs"]{
+    -webkit-appearance: none;
+}
+input[name="radioinputs"]+label{
+    padding: 2px 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+input[name="radioinputs"]+label:hover{
+    background-color: rgb(69, 69, 133);
+}
+input:checked+label{
+    background: rgb(99, 99, 155)
+}
+input:checked+label:hover{
+    background: rgb(99, 99, 155)
+}
+body{
+    overflow: hidden;
+}
+.bodydiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.mainform{
+    margin-top: 5rem;
+    padding: 3rem;
+    font-size: 2rem;
+    border: 0.1px solid black;
+    box-shadow: 1.5px 1.5px rgb(160, 157, 157);
+}

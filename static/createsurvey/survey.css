@@ -1,0 +1,41 @@
+#Textarea1{
+    resize: none;
+}
+.mainform{
+    background-color: beige;
+    position: relative;
+    padding: 50px;
+}
+.fa{
+    position: absolute;
+    left: 50%;
+    cursor: pointer;
+    bottom: 0;
+}
+/* .mainform::after{
+    content: "";
+    width: 7px;
+    height: 30px;
+    position: absolute;
+    background-color: blue;
+   border: 1px solid blue;
+   box-shadow: 0.7px 0.7px blue;
+   opacity: 0.75;
+   left: 50%;
+   cursor: pointer;
+}
+.mainform::before{
+    content: "";
+    width: 7px;
+    height: 30px;
+    position: absolute;
+   background-color: blue;
+   border: 1px solid blue;
+   box-shadow: 0.7px 0.7px blue;
+   opacity: 0.75;
+   left: 50%;
+   top:76.5%;
+   transform-origin: center;
+   transform: rotate(90deg);
+   cursor: pointer;   
+} */

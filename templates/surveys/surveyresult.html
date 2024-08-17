@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Result Survey{% endblock title %}
+{% block static_css %}
+<link rel="stylesheet" href="{% static 'votesurvey/result.css' %}">
+{% endblock static_css %}
+{% block content %}
+<div class="bodydiv">
+    <form class="px-4 mainform container" action="{% url 'showresult' survey.slug %}">
+      <p class="fw-bold">{{survey.question}}</p>
+      {% for option,percent in options.items %}
+      {% if option != None %}
+          <div class="resoption">{{option}}
+            <div class="percent" style="width:{{percent}}%;color:white;"></div>
+          </div>
+      {% endif %}
+    {% endfor %}
+    </form>
+</div>
+{% endblock content %}

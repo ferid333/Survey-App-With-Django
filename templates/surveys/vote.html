@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Vote Survey{% endblock title %}
+{% block static_css %}
+<link rel="stylesheet" href="{% static 'votesurvey/vote.css' %}">
+{% endblock static_css %}
+{% block content %}
+    <div class="bodydiv">
+    <form class="px-4 mainform container" action="{% url 'voteresult' survey.slug %}" method="POST">
+      {% csrf_token %}
+      <p class="fw-bold">{{survey.question}}</p>
+      {% for option in options %}
+      {% if option != None and option != "" %}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" value="{{option}}" id="{{option}}" name="radioinputs" />
+          <label class="form-check-label" for="{{option}}">
+           {{option}}
+          </label>
+        </div>
+      {% endif %}
+    {% endfor %}
+      <button type="submit" class="btn btn-primary">Vote</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create Survey{% endblock title %}
+{% block static_css %}
+<link rel="stylesheet" href="{% static 'createsurvey/survey.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock static_css %}
+{% block content %}
+<form class="container mt-5 mainform" method="POST" action="newsurvey">
+  {% csrf_token %}
+      <div class="mb-3">
+        <label for="Textarea1" class="form-label">Your Question</label>
+        <textarea class="form-control" id="Textarea1" rows="3" required name="question"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Option 1</label>
+        <input type="text" class="form-control" name="option1" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Option 2</label>
+        <input type="text" class="form-control" name="option2" required>
+    </div>
+      <div class="mb-3 options" style="display:none;">
+        <label for="exampleFormControlTextarea1" class="form-label">Option 3</label>
+        <input type="text" class="form-control" name="option3"  value="">
+    </div>
+    <div class="mb-3 options" style="display:none;">
+      <label for="exampleFormControlTextarea1" class="form-label">Option 4</label>
+      <input type="text" class="form-control" name="option4"  value="">
+  </div>
+  <div class="mb-3 options" style="display:none;">
+    <label for="exampleFormControlTextarea1" class="form-label">Option 5</label>
+    <input type="text" class="form-control" name="option5"  value="">
+</div>
+    <i class="fa fa-plus" style="font-size:48px;color:blue"></i>
+    <button type="submit" class="btn btn-primary submitbtn">Submit</button>
+</form>
+<script src="{% static 'createsurvey/survey.js' %}" ></script>
+{% endblock content %}

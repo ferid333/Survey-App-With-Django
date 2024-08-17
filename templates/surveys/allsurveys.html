@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}All Surveys{% endblock title %}
+{% block static_css %}
+
+{% endblock static_css %}
+{% block content %}
+{% for survey in surveys|slice:str_slice%}
+    <div class="card w-75 container mt-3">
+        <div class="card-body">
+        <h5 class="card-title">{{survey.question}}</h5>
+        <p class="card-text">Username: {{survey.user}}</p>
+        {% if not survey.slug in entered_survey %}
+         <a href="{% url 'votesurvey' survey.slug %}" class="btn btn-primary">Vote </a>
+        {% else %}
+         <a href="{% url 'votesurvey' survey.slug %}" class="btn btn-primary">Show Result</a>
+        {% endif %}
+      </div>
+    </div>
+{% endfor %}
+<nav class="container d-flex justify-content-center mt-3">
+    <ul class="pagination pagination-sm">
+      {% for page in pages %}
+         {% if page == active_page %}
+            <li class="page-item active" aria-current="page">
+              <a class="page-link " href="{% url 'allsurveys' page %}">{{page}}</a>
+            </li>
+          {% else %}
+            <li class="page-item" aria-current="page">
+              <a class="page-link " href="{% url 'allsurveys' page %}">{{page}}</a>
+            </li>
+          {% endif %}
+        
+      {% endfor %}
+     
+    </ul>
+  </nav>
+{% endblock content %}

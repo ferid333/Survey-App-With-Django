@@ -1,0 +1,34 @@
+
+.resoption{
+    padding: 2px 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    border: 0;
+    cursor: default;
+
+}
+.percent{
+    content: "";
+    position: absolute;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    left: 0;
+    top: 0;
+}
+body{
+    overflow: hidden;
+}
+.bodydiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.mainform{
+    margin-top: 5rem;
+    padding: 3rem;
+    font-size: 2rem;
+    border: 0.1px solid black;
+    box-shadow: 1.5px 1.5px rgb(160, 157, 157);
+}
